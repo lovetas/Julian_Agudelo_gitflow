@@ -24,11 +24,15 @@ while True:
 
     if opcion == "5":
         print("Saliendo del programa...")
-        break   
+        break
 
     if opcion in ["1", "2", "3", "4"]:
-        num1 = float(input("Ingresa el primer número: "))
-        num2 = float(input("Ingresa el segundo número: "))
+        try:
+            num1 = float(input("Ingresa el primer número: "))
+            num2 = float(input("Ingresa el segundo número: "))
+        except ValueError:
+            print("Error: debes ingresar solo números.")
+            continue
 
         if opcion == "1":
             print("Resultado:", sumar(num1, num2))
@@ -40,4 +44,3 @@ while True:
             print("Resultado:", dividir(num1, num2))
     else:
         print("Opción inválida")
-
